@@ -171,9 +171,9 @@ export const schema = {
 				env: 'DB_SQLITE_DATABASE',
 			},
 			enableWAL: {
-				doc: 'Enable SQLite WAL mode',
+				doc: 'Enable SQLite WAL mode (Always enabled for pool-size > 1)',
 				format: Boolean,
-				default: true,
+				default: false,
 				env: 'DB_SQLITE_ENABLE_WAL',
 			},
 			poolSize: {

@@ -56,13 +56,16 @@ const getSqliteConnectionOptions = (): SqliteConnectionOptions | SqlitePooledCon
 			Container.get(InstanceSettings).n8nFolder,
 			config.getEnv('database.sqlite.database'),
 		),
-		enableWAL: config.getEnv('database.sqlite.enableWAL'),
 		migrations: sqliteMigrations,
 	};
 	if (poolSize > 0) {
-		return { type: 'sqlite-pooled', poolSize, ...commonOptions };
+		return { type: 'sqlite-pooled', poolSize, enableWAL: true, ...commonOptions };
 	} else {
-		return { type: 'sqlite', ...commonOptions };
+		return {
+			type: 'sqlite',
+			enableWAL: config.getEnv('database.sqlite.enableWAL'),
+			...commonOptions,
+		};
 	}
 };
 
