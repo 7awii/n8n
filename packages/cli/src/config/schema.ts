@@ -177,7 +177,7 @@ export const schema = {
 				env: 'DB_SQLITE_ENABLE_WAL',
 			},
 			poolSize: {
-				doc: 'SQLite Pool Size (Setting to 0 to disables pooling)',
+				doc: 'SQLite Pool Size (Setting this to 0 disables pooling)',
 				format: Number,
 				default: 0,
 				env: 'DB_SQLITE_POOL_SIZE',
