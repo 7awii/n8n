@@ -44,7 +44,7 @@ const i18n = useI18n();
 					v-if="isTrigger"
 					icon="bolt"
 					size="xs"
-					:title="i18n.baseText('nodeCreator.nodeItem.triggerIconTitle')"
+					:title="i18n.t('nodeCreator.nodeItem.triggerIconTitle')"
 					:class="$style.triggerIcon"
 				/>
 				<N8nTooltip
